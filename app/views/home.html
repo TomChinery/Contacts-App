@@ -1,0 +1,11 @@
+<div ng-controller="homeController">
+  <h1>Contacts</h1>
+
+  <p>A simple app built with Angular JS that fetches a list of contacts from an external JSON api. The backend just returns all users so you can't add, edit or delete them.</p>
+
+  <wave-spinner ng-show="loading"></wave-spinner>
+
+  <div ng-repeat="contact in contacts" class="contacts-list">
+    {{ contact.name }}
+  </div>
+</div>
