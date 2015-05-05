@@ -6,14 +6,22 @@ describe('contactServiceTest', function() {
       contactService = _contactService_;
   }));
 
-  it('should have allContacts defined', function () {
-    expect( contactService.allContacts() ).toBeDefined();
-  });
+  describe('all contacts', function () {
+    it('should have allContacts defined', function () {
+      expect( contactService.allContacts() ).toBeDefined();
+    });
 
-  it('should return 10 contacts', function () {
-    contactService.allContacts().then( function (contactArr) {
-      expect( contactArr.length ).toBe(10);
+    it('should return 10 contacts', function () {
+      contactService.allContacts().then( function (contactArr) {
+        expect( contactArr.length ).toBe(10);
+      });
     });
   });
+
+  describe('delete contact by id', function () { // @TODO implement HttpBackend for unit tests
+
+
+  });
+
 
 });

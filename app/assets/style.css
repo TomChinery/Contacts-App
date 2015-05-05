@@ -10,11 +10,49 @@ p {
   margin:0 auto 25px auto;
 }
 
+a {
+  color:#2583AD;
+}
+
+a:hover {
+  color:#2588af;
+}
+
+.info span {
+  padding:5px;
+}
+
+a.control {
+  text-decoration:none;
+}
+
+.icon-bin {
+  color:#c64343;
+}
+
+label {
+  display:block;
+  margin:10px;
+}
+
+.icon-arrow-down2,
+.icon-arrow-right2 {
+  position:absolute;
+  right:10px;
+  top:12px;
+}
+
+footer {
+  margin-top:25px;
+}
+
 .wave-spinner > div {
   background-color:#9C9C9C;
 }
 
 .contacts-list {
+  position:relative;
+  cursor:pointer;
   background-color:#F3F3F7;
   border:1px solid #DEDEE3;
   max-width:30%;

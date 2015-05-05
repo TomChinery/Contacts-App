@@ -1,11 +1,29 @@
 <div ng-controller="homeController">
   <h1>Contacts</h1>
 
-  <p>A simple app built with Angular JS that fetches a list of contacts from an external JSON api. The backend just returns all users so you can't add, edit or delete them.</p>
+  <p>
+    A simple app built with Angular JS that fetches a list of contacts from an
+    external JSON api. The backend is RESTful so you can add, update, and delete
+    contacts as you please.
+  </p>
 
   <wave-spinner ng-show="loading"></wave-spinner>
 
   <div ng-repeat="contact in contacts" class="contacts-list">
-    {{ contact.name }}
+    <div class="name" ng-click="openContact()">
+      {{ contact.name }}
+
+      <span class="icon-arrow-down2" ng-show="open" ></span>
+      <span class="icon-arrow-right2" ng-show="!open" ></span>
+    </div>
+    <div class="info" ng-show="open">
+      <label><span class="icon-paperplane"></span> {{ contact.email }} </label>
+      <label><span class="icon-phone2"></span> {{ contact.phone }} </label>
+      <label><span class="icon-link5"></span> <a href="{{ contact.website }}" target="_blank"> {{ contact.website }} </a></label>
+
+
+      <a href="#/" class="control"><span class="icon-pencil5"></span></a>
+      <a href="#/" class="control" ng-click="deleteContact( contact.id )"><span class="icon-bin"></span></a>
+    </div>
   </div>
 </div>
