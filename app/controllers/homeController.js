@@ -8,6 +8,12 @@ contactApp.controller('homeController', function($scope, contactService) {
 
   $scope.showUpdateModal = false;
 
+  $scope.currentContact = {};
+
+  $scope.visibleUpdateModal = false;
+
+  $scope.visibleAddModal = false;
+
   $scope.openContact = function () {
     if ( $scope.open == false ) {
       $scope.open = true;
@@ -28,8 +34,31 @@ contactApp.controller('homeController', function($scope, contactService) {
 
   };
 
-  $scope.updateModal = function () {
-    $scope.showUpdateModal = true;
+  $scope.updateContact = function () {
+    contactService.update( $scope.currentContact ).finally(function () {
+      $scope.hideModal();
+      $scope.loadContacts(); // reload contacts
+    });
+  };
+
+  $scope.addContact = function () {
+
+  };
+
+  $scope.addModal = function () {
+    $scope.visibleAddModal = true;
+  };
+
+  $scope.updateModal = function ( id ) {
+    $scope.visibleUpdateModal = true;
+    contactService.getById( id ).then(function (contact) {
+      $scope.currentContact = contact;
+    });
+  };
+
+  $scope.hideModal = function () {
+    $scope.visibleUpdateModal = false;
+    $scope.visibleAddModal = false;
   };
 
   $scope.loadContacts = function () {

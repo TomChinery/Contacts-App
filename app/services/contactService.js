@@ -4,19 +4,30 @@ contactService.factory('contactService', function ($http) {
   var contacts = {
     allContacts: allContacts,
     deleteById: deleteById,
+    getById: getById,
+    update: update,
+    add: add,
   };
 
   function allContacts() {
-    var request = $http.get('http://tomchinery.com:3000/contacts');
-
-    return request.then( handleSuccess, handleError );
+    return $http.get('http://tomchinery.com:3000/contacts').then( handleSuccess, handleError );
   };
+
+  function getById(id) {
+    return $http.get( 'http://tomchinery.com:3000/contacts/' + id ).then( handleSuccess, handleError );
+  }
 
   function deleteById(id) {
-
     return $http.delete( 'http://tomchinery.com:3000/contacts/' + id ).then( handleStatus, handleError );
-
   };
+
+  function update( contact ) {
+    return $http.put('http://tomchinery.com:3000/contacts/' + contact.id, contact ).then( handleStatus, handleError );
+  };
+
+  function add( contact ) {
+    return $http.post('http://tomchinery.com:3000/contacts/', contact ).then( handleStatus, handleError );
+  }
 
   // private methods
   function handleSuccess( response ) {
@@ -33,7 +44,7 @@ contactService.factory('contactService', function ($http) {
 
   function handleStatus( response ) {
 
-    response.status;
+    return response.status;
 
   }
 

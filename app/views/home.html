@@ -22,7 +22,7 @@
       <label><span class="icon-link5" title="Website"></span> <a href="{{ contact.website }}" target="_blank" title="Go to website?"> {{ contact.website }} </a></label>
 
 
-      <a href="#/" class="control" title="Edit contact?" ng-click="updateModal()"><span class="icon-pencil5"></span></a>
+      <a href="#/" class="control" title="Edit contact?" ng-click="updateModal( contact.id )"><span class="icon-pencil5"></span></a>
       <a href="#/" class="control" ng-click="deleteContact( contact.id )" title="Delete this contact?"><span class="icon-bin"></span></a>
     </div>
   </div>
@@ -31,7 +31,7 @@
     <label title="Add new contact"><span class="icon-plus2"></span> Add new </label>
   </div>
 
-  <div ng-if="showUpdateModal">
+  <div ng-if="visibleUpdateModal">
 
     <div ng-include="'app/views/_updateContact.html'" />
 
