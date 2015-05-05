@@ -4,7 +4,7 @@ contactApp.controller('homeController', function($scope, contactService) {
 
   $scope.contacts = {};
 
-  $scope.open = false;
+  $scope.open = 0;
 
   $scope.showUpdateModal = false;
 
@@ -16,11 +16,11 @@ contactApp.controller('homeController', function($scope, contactService) {
 
   $scope.visibleAddModal = false;
 
-  $scope.openContact = function () {
-    if ( $scope.open == false ) {
-      $scope.open = true;
+  $scope.openContact = function ( id ) {
+    if ( $scope.open == 0 ) {
+      $scope.open = id;
     } else {
-      $scope.open = false;
+      $scope.open = 0;
     }
   };
 

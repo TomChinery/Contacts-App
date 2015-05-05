@@ -10,13 +10,13 @@
   <wave-spinner ng-show="loading"></wave-spinner>
 
   <div ng-repeat="contact in contacts" class="contacts-list">
-    <div class="name" ng-click="openContact()">
+    <div class="name" ng-click="openContact( contact.id )">
       {{ contact.name }}
 
-      <span class="icon-arrow-down2" ng-show="open" ></span>
-      <span class="icon-arrow-right2" ng-show="!open" ></span>
+      <span class="icon-arrow-down2" ng-if="open == contact.id"></span>
+      <span class="icon-arrow-right2" ng-if="open != contact.id" ></span>
     </div>
-    <div class="info" ng-show="open">
+    <div class="info" ng-if="open == contact.id">
       <label><span class="icon-paperplane" title="Email"></span> {{ contact.email }} </label>
       <label><span class="icon-phone2" title="Phone"></span> {{ contact.phone }} </label>
       <label><span class="icon-link5" title="Website"></span> <a href="{{ contact.website }}" target="_blank" title="Go to website?"> {{ contact.website }} </a></label>
