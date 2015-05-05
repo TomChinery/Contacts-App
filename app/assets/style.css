@@ -97,8 +97,51 @@ footer {
 
 .modal-show form {
   position:relative;
-  background-color:white;
+  background-color:#F3F3F7;
   max-width:30%;
-  margin:10% auto 0 auto;
+  margin:8% auto 0 auto;
   z-index:10;
+  padding:20px;
+  border:1px solid #DEDEE3;
+}
+
+.modal-show label {
+  margin:15px auto;
+}
+
+.modal-show input[type=text] {
+  border-radius:none;
+  border:1px solid #DEDEE3;
+  padding:10px;
+  background-color:white;
+  font-size:16px;
+  text-align:center;
+  width:100%;
+}
+
+.modal-show input[type=text]:focus,
+.modal-show input[type=text]:active {
+  border:1px solid #2588af;
+}
+
+.modal-show input[type="submit"] {
+  background-color:#2583AD;
+  border:1px solid #2588af;
+  color:white;
+  cursor:pointer;
+  padding:10px 15px;
+  font-size:14px;
+  border-radius:4px;
+}
+
+.modal-show input[type="submit"]:hover,
+.modal-show input[type="submit"]:active {
+  background-color:#2196c4;
+  border:1px solid #23a1c1;
+}
+
+.modal-show form h2 {
+  margin:0;
+  text-align:center;
+  padding:15px 0 15px 0;
 }

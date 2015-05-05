@@ -1,18 +1,23 @@
 <section class="modal-show" ng-show="visibleUpdateModal" >
 
     <form ng-submit="updateContact()">
-      <label for="cname">Name:</label>
+
+      <h2>Edit Contact</h2>
+
+      <label for="cname"><span class="icon-profile"></span> Name:</label>
       <input type="text" name="cname" value="{{ currentContact.name }}" ng-model="currentContact.name" />
 
-      <label for="cmail">Email:</label>
+      <label for="cmail"><span class="icon-paperplane"></span> Email:</label>
       <input type="text" name="cmail" value="{{ currentContact.email }}" ng-model="currentContact.email"/>
 
-      <label for="cphone"></label>
+      <label for="cphone"><span class="icon-phone2"></span> Phone:</label>
       <input type="text" name="cphone" value="{{ currentContact.phone }}" ng-model="currentContact.phone"/>
 
-      <label for="csite">Website:</label>
+      <label for="csite"><span class="icon-link5"></span> Website:</label>
       <input type="text" name="csite" value="{{ currentContact.website }}" ng-model="currentContact.website"/>
 
+      <br/>
+      <br/>
       <input type="submit" value="Update Contact"/>
 
     </form>
