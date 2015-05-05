@@ -6,6 +6,8 @@ contactApp.controller('homeController', function($scope, contactService) {
 
   $scope.open = false;
 
+  $scope.showUpdateModal = false;
+
   $scope.openContact = function () {
     if ( $scope.open == false ) {
       $scope.open = true;
@@ -16,10 +18,18 @@ contactApp.controller('homeController', function($scope, contactService) {
 
   $scope.deleteContact = function (id) {
 
-    contactService.deleteById(id).finally(function () {
-      $scope.loadContacts(); // reload contacts
-    });
+    var youSure = confirm('Are you sure you want to delete this contact?');
 
+    if ( youSure ) {
+      contactService.deleteById(id).finally(function () {
+        $scope.loadContacts(); // reload contacts
+      });
+    }
+
+  };
+
+  $scope.updateModal = function () {
+    $scope.showUpdateModal = true;
   };
 
   $scope.loadContacts = function () {

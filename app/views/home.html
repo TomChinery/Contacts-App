@@ -17,13 +17,23 @@
       <span class="icon-arrow-right2" ng-show="!open" ></span>
     </div>
     <div class="info" ng-show="open">
-      <label><span class="icon-paperplane"></span> {{ contact.email }} </label>
-      <label><span class="icon-phone2"></span> {{ contact.phone }} </label>
-      <label><span class="icon-link5"></span> <a href="{{ contact.website }}" target="_blank"> {{ contact.website }} </a></label>
+      <label><span class="icon-paperplane" title="Email"></span> {{ contact.email }} </label>
+      <label><span class="icon-phone2" title="Phone"></span> {{ contact.phone }} </label>
+      <label><span class="icon-link5" title="Website"></span> <a href="{{ contact.website }}" target="_blank" title="Go to website?"> {{ contact.website }} </a></label>
 
 
-      <a href="#/" class="control"><span class="icon-pencil5"></span></a>
-      <a href="#/" class="control" ng-click="deleteContact( contact.id )"><span class="icon-bin"></span></a>
+      <a href="#/" class="control" title="Edit contact?" ng-click="updateModal()"><span class="icon-pencil5"></span></a>
+      <a href="#/" class="control" ng-click="deleteContact( contact.id )" title="Delete this contact?"><span class="icon-bin"></span></a>
     </div>
+  </div>
+
+  <div class="contacts-list add-new" ng-show="!loading">
+    <label title="Add new contact"><span class="icon-plus2"></span> Add new </label>
+  </div>
+
+  <div ng-if="showUpdateModal">
+
+    <div ng-include="'app/views/_updateContact.html'" />
+
   </div>
 </div>

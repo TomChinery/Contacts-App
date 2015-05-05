@@ -61,7 +61,12 @@ footer {
   margin:5px auto;
 }
 
-.contacts-list.ng-enter, .contacts-list.ng-move {
+.add-new label {
+  margin: 10px;
+}
+
+.contacts-list.ng-enter, .contacts-list.ng-move,
+.add-new.ng-enter, .add-new.ng-move {
   -webkit-transition:0.5s linear all;
   -moz-transition:0.5s linear all;
   -o-transition:0.5s linear all;
@@ -70,6 +75,8 @@ footer {
 }
 
 .contacts-list.ng-enter.ng-enter-active,
-.contacts-list.ng-move.ng-move-active {
+.contacts-list.ng-move.ng-move-active,
+.add-new.ng-enter.ng-enter-active,
+.add-new.ng-move.ng-move-active {
   opacity:1;
 }
