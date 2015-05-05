@@ -27,13 +27,20 @@
     </div>
   </div>
 
-  <div class="contacts-list add-new" ng-show="!loading">
+  <div class="contacts-list add-new" ng-show="!loading" ng-click="addModal()">
     <label title="Add new contact"><span class="icon-plus2"></span> Add new </label>
   </div>
 
   <div ng-if="visibleUpdateModal">
 
-    <div ng-include="'app/views/_updateContact.html'" />
+    <div ng-include="'app/views/_updateContact.html'"></div>
 
   </div>
+
+  <div ng-if="visibleAddModal">
+
+    <div ng-include="'app/views/_addContact.html'"></div>
+
+  </div>
+
 </div>

@@ -10,6 +10,8 @@ contactApp.controller('homeController', function($scope, contactService) {
 
   $scope.currentContact = {};
 
+  $scope.emptyContact = {};
+
   $scope.visibleUpdateModal = false;
 
   $scope.visibleAddModal = false;
@@ -42,11 +44,15 @@ contactApp.controller('homeController', function($scope, contactService) {
   };
 
   $scope.addContact = function () {
-
+    contactService.add( $scope.emptyContact ).finally(function () {
+      $scope.hideModal();
+      $scope.loadContacts(); // reload contacts
+    });
   };
 
   $scope.addModal = function () {
     $scope.visibleAddModal = true;
+    console.log('Hesso');
   };
 
   $scope.updateModal = function ( id ) {

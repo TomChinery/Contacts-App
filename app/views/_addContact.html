@@ -1,0 +1,27 @@
+<section class="modal-show" ng-show="visibleAddModal" >
+
+    <form ng-submit="addContact()">
+
+      <h2>Add New Contact</h2>
+
+      <label for="cname"><span class="icon-profile"></span> Name:</label>
+      <input type="text" name="cname" value="{{ emptyContact.name }}" ng-model="emptyContact.name" />
+
+      <label for="cmail"><span class="icon-paperplane"></span> Email:</label>
+      <input type="text" name="cmail" value="{{ emptyContact.email }}" ng-model="emptyContact.email"/>
+
+      <label for="cphone"><span class="icon-phone2"></span> Phone:</label>
+      <input type="text" name="cphone" value="{{ emptyContact.phone }}" ng-model="emptyContact.phone"/>
+
+      <label for="csite"><span class="icon-link5"></span> Website:</label>
+      <input type="text" name="csite" value="{{ emptyContact.website }}" ng-model="emptyContact.website"/>
+
+      <br/>
+      <br/>
+      <input type="submit" value="Add Contact"/>
+
+    </form>
+
+    <div class="bg" ng-click="hideModal()"></div>
+
+</section>
