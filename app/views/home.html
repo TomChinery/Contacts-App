@@ -33,13 +33,71 @@
 
   <div ng-if="visibleUpdateModal">
 
-    <div ng-include="'app/views/_updateContact.html'"></div>
+    <!-- <div ng-include="'app/views/_updateContact.html'"></div> -->
+    <!-- ng-include does not work on gh-pages just use the template files as a patch -->
+
+    <section class="modal-show" ng-show="visibleUpdateModal" >
+
+        <form ng-submit="updateContact()">
+
+          <h2>Edit Contact</h2>
+
+          <label for="cname"><span class="icon-profile"></span> Name:</label>
+          <input type="text" name="cname" value="{{ currentContact.name }}" ng-model="currentContact.name" />
+
+          <label for="cmail"><span class="icon-paperplane"></span> Email:</label>
+          <input type="text" name="cmail" value="{{ currentContact.email }}" ng-model="currentContact.email"/>
+
+          <label for="cphone"><span class="icon-phone2"></span> Phone:</label>
+          <input type="text" name="cphone" value="{{ currentContact.phone }}" ng-model="currentContact.phone"/>
+
+          <label for="csite"><span class="icon-link5"></span> Website:</label>
+          <input type="text" name="csite" value="{{ currentContact.website }}" ng-model="currentContact.website"/>
+
+          <br/>
+          <br/>
+          <input type="submit" value="Update Contact" title="Update contact"/>
+
+        </form>
+
+        <div class="bg" ng-click="hideModal()"></div>
+
+    </section>
 
   </div>
 
   <div ng-if="visibleAddModal">
 
-    <div ng-include="'app/views/_addContact.html'"></div>
+    <!-- <div ng-include="'app/views/_addContact.html'"></div> -->
+    <!-- ng-include does not work on gh-pages just use the template files as a patch -->
+
+    <section class="modal-show" ng-show="visibleAddModal" >
+
+        <form ng-submit="addContact()">
+
+          <h2>Add New Contact</h2>
+
+          <label for="cname"><span class="icon-profile"></span> Name:</label>
+          <input type="text" name="cname" value="{{ emptyContact.name }}" ng-model="emptyContact.name" />
+
+          <label for="cmail"><span class="icon-paperplane"></span> Email:</label>
+          <input type="text" name="cmail" value="{{ emptyContact.email }}" ng-model="emptyContact.email"/>
+
+          <label for="cphone"><span class="icon-phone2"></span> Phone:</label>
+          <input type="text" name="cphone" value="{{ emptyContact.phone }}" ng-model="emptyContact.phone"/>
+
+          <label for="csite"><span class="icon-link5"></span> Website:</label>
+          <input type="text" name="csite" value="{{ emptyContact.website }}" ng-model="emptyContact.website"/>
+
+          <br/>
+          <br/>
+          <input type="submit" value="Add Contact" title="Add New Contact"/>
+
+        </form>
+
+        <div class="bg" ng-click="hideModal()"></div>
+
+    </section>
 
   </div>
 
